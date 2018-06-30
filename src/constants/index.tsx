@@ -6,3 +6,6 @@ export type DEPOSIT = typeof DEPOSIT;
 
 export const WITHDRAW = 'WITHDRAW';
 export type WITHDRAW = typeof WITHDRAW;
+
+export const FETCH_BITCOIN = 'FETCH_BITCOIN';
+export type FETCH_BITCOIN = typeof FETCH_BITCOIN;
