@@ -11,6 +11,8 @@ const balance = (
       return action.balance;
     case constants.DEPOSIT:
       return { ...state, balance: (state.balance += action.deposit) };
+    case constants.WITHDRAW:
+      return { ...state, balance: (state.balance -= action.withdrawal) };
     default:
       return state;
   }
