@@ -2,7 +2,7 @@ import { FETCH_BITCOIN } from '../constants';
 
 export interface IFetchBitcoin {
   type: FETCH_BITCOIN;
-  bitcoin: any;
+  bitcoin: object;
 }
 
 export type FetchBitcoinAction = IFetchBitcoin;
