@@ -1,6 +1,7 @@
 import { BalanceAction } from '../actions/balance';
 import * as constants from '../constants';
 import { IStoreState } from '../types';
+
 const balance = (state: IStoreState, action: BalanceAction): any => {
   switch (action.type) {
     case constants.SET_BALANCE:
@@ -8,7 +9,6 @@ const balance = (state: IStoreState, action: BalanceAction): any => {
     default:
       return balance;
   }
-  return state;
 };
 
 export default balance;
