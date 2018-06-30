@@ -37,7 +37,7 @@ describe('Wallet', () => {
       beforeEach(() => wallet.find('.btn-deposit').simulate('click'));
 
       it('dispatches the `deposit()` it receives from props with local balance', () => {
-        expect(mockDeposit).toHaveBeenCalled(parseInt(userBalance, 10));
+        expect(mockDeposit).toHaveBeenCalledWith(parseInt(userBalance, 10));
       });
     });
   });
