@@ -36,7 +36,14 @@ export const mapDispatchToProps = (dispatch: any) => {
   };
 };
 
+export const mapStateToProps = ({ balance, bitcoin }: any) => {
+  return {
+    balance,
+    bitcoin
+  };
+};
+
 export default connect(
-  state => state,
+  mapStateToProps,
   mapDispatchToProps
 )(Loot);
