@@ -21,7 +21,7 @@ describe('Wallet', () => {
     expect(wallet.find('.input-wallet').exists()).toBe(true);
   });
 
-  describe('when the user types into the wallt input', () => {
+  describe('when the user types into the wallet input', () => {
     const userBalance = '25';
 
     beforeEach(() => {
