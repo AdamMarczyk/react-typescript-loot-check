@@ -29,7 +29,7 @@ describe('balanceReducer', () => {
         { balance: initialState },
         { type: constants.DEPOSIT, deposit }
       )
-    ).toEqual({ balance: initialState + deposit });
+    ).toEqual(initialState + deposit);
   });
 
   it('withdraws from the balance', () => {
@@ -41,6 +41,6 @@ describe('balanceReducer', () => {
         { balance: initialState },
         { type: constants.WITHDRAW, withdrawal }
       )
-    ).toEqual({ balance: initialState - withdrawal });
+    ).toEqual(initialState - withdrawal);
   });
 });

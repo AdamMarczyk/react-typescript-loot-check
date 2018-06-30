@@ -1,7 +1,7 @@
 import { FetchBitcoinAction } from '../actions/bitcoin';
 import { FETCH_BITCOIN } from '../constants';
 
-const bitcoin = (state = {}, action: FetchBitcoinAction) => {
+const bitcoin = (state = {}, action: FetchBitcoinAction): any => {
   switch (action.type) {
     case FETCH_BITCOIN:
       return action.bitcoin;
