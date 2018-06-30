@@ -10,7 +10,12 @@ export interface IDeposit {
   deposit: number;
 }
 
-export type BalanceAction = ISetBalance | IDeposit;
+export interface IWithdrawal {
+  type: constants.WITHDRAW;
+  withdrawal: number;
+}
+
+export type BalanceAction = ISetBalance | IDeposit | IWithdrawal;
 
 export const setBalance = (balance: number) => {
   return {
@@ -23,5 +28,12 @@ export const deposit = (depositAmount: number) => {
   return {
     deposit: depositAmount,
     type: constants.DEPOSIT
+  };
+};
+
+export const withdraw = (withdrawal: number) => {
+  return {
+    type: constants.WITHDRAW,
+    withdrawal
   };
 };
