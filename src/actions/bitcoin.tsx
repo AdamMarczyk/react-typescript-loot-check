@@ -1,5 +1,12 @@
 import { FETCH_BITCOIN } from '../constants';
 
+export interface IFetchBitcoin {
+  type: FETCH_BITCOIN;
+  bitcoin: any;
+}
+
+export type FetchBitcoinAction = IFetchBitcoin;
+
 export const fetchBitcoin = (): any => {
   return (dispatch: any) => {
     return fetch('https://api.coindesk.com/v1/bpi/currentprice.json')

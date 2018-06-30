@@ -17,21 +17,21 @@ export interface IWithdrawal {
 
 export type BalanceAction = ISetBalance | IDeposit | IWithdrawal;
 
-export const setBalance = (balance: number) => {
+export const setBalance = (balance: number): ISetBalance => {
   return {
     balance,
     type: constants.SET_BALANCE
   };
 };
 
-export const deposit = (depositAmount: number) => {
+export const deposit = (depositAmount: number): IDeposit => {
   return {
     deposit: depositAmount,
     type: constants.DEPOSIT
   };
 };
 
-export const withdraw = (withdrawal: number) => {
+export const withdraw = (withdrawal: number): IWithdrawal => {
   return {
     type: constants.WITHDRAW,
     withdrawal
