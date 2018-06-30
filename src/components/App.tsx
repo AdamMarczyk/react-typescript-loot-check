@@ -1,10 +1,12 @@
 import * as React from 'react';
-
+import Wallet from './Wallet';
 class App extends React.Component {
   public render() {
     return (
       <div>
         <h2>Loot Check</h2>
+        <hr />
+        <Wallet />
       </div>
     );
   }

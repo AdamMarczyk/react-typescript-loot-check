@@ -9,7 +9,7 @@ export type BalanceAction = ISetBalance;
 
 export const setBalance = (balance: number) => {
   return {
-    type: constants.SET_BALANCE,
-    balance
+    balance,
+    type: constants.SET_BALANCE
   };
 };
