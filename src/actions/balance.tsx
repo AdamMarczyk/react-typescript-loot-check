@@ -5,11 +5,23 @@ export interface ISetBalance {
   balance: number;
 }
 
-export type BalanceAction = ISetBalance;
+export interface IDeposit {
+  type: constants.DEPOSIT;
+  deposit: number;
+}
+
+export type BalanceAction = ISetBalance | IDeposit;
 
 export const setBalance = (balance: number) => {
   return {
     balance,
     type: constants.SET_BALANCE
+  };
+};
+
+export const deposit = (depositAmount: number) => {
+  return {
+    deposit: depositAmount,
+    type: constants.DEPOSIT
   };
 };
