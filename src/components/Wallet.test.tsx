@@ -6,7 +6,7 @@ import { IWalletState, Wallet } from './Wallet';
 describe('Wallet', () => {
   const mockDeposit = jest.fn();
   const mockWithdraw = jest.fn();
-  const props = { balance: 20, deposit: mockDeposit };
+  const props = { balance: 20, deposit: mockDeposit, withdraw: mockWithdraw };
   const wallet = shallow<Wallet, {}, IWalletState>(<Wallet {...props} />);
 
   it('renders properly', () => {

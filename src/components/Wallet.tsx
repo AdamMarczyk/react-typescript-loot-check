@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { deposit } from '../actions/balance';
+import { deposit, withdraw } from '../actions/balance';
 import { IStoreState } from '../types/index';
 
 export interface IWalletProps {
   balance: number;
   deposit: (balance: number) => void;
+  withdraw: (balance: number) => void;
 }
 
 export interface IWalletState {
@@ -23,6 +24,8 @@ export class Wallet extends React.Component<IWalletProps, {}> {
 
   public deposit = (): void => this.props.deposit(this.state.balance);
 
+  public withdraw = (): void => this.props.withdraw(this.state.balance);
+
   public render() {
     return (
       <div>
@@ -31,6 +34,9 @@ export class Wallet extends React.Component<IWalletProps, {}> {
         <input className="input-wallet" onChange={this.updateBalance} />
         <button className="btn-deposit" onClick={this.deposit}>
           Deposit
+        </button>
+        <button className="btn-withdraw" onClick={this.withdraw}>
+          Withdraw
         </button>
       </div>
     );
@@ -45,7 +51,8 @@ export const mapStateToProps = ({ balance }: IStoreState) => {
 
 export const mapDispatchToProps = (dispatch: any) => {
   return {
-    deposit: (balance: number) => dispatch(deposit(balance))
+    deposit: (balance: number) => dispatch(deposit(balance)),
+    withdraw: (balance: number) => dispatch(withdraw(balance))
   };
 };
 
